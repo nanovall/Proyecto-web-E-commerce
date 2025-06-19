@@ -1,4 +1,4 @@
-import { createCards, renderCards } from "./components/cards.js";
+import { createCards, renderCards } from './components/Cards/cards.js';
 import { crearSeccionCarrito } from "./cosas/carritocompra.js";
 import { filtrarProductos } from "./cosas/filtrado.js";
 

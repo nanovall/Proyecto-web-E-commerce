@@ -1,4 +1,5 @@
-import { guardarEnCarrito } from "../cosas/elcarrito.js";
+import { guardarEnCarrito } from "../../cosas/elcarrito.js";
+
 
 export function createModal(p) {
   let containerModal = document.querySelector("#exampleModal");

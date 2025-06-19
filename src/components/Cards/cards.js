@@ -1,5 +1,6 @@
-import { getProducts } from "../api/api.js";
-import { createModal } from "./modal.js";
+import { getProducts } from "../../api/api.js";
+import { createModal } from "../Modal/modal.js";
+
 
 let containerCards = document.querySelector("#list-products");
 
