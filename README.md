@@ -43,7 +43,7 @@ code .
 ## 👥 Colaboradores
 
 - @nanovall
-- @usuario1
+- @lucasrobertodev
 - @usuario2
 
 ---
