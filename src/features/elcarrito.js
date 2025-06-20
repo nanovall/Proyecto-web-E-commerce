@@ -47,3 +47,17 @@ export function actualizarCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   crearSeccionCarrito(carrito);
 }
+
+window.finalizarCompra = function () {
+  localStorage.removeItem("carrito");
+  alert("¡Gracias por tu compra!");
+  actualizarCarrito([]);
+};
+
+window.eliminarTodoElCarrito = function () {
+  const confirmacion = confirm("¿Estás seguro de que querés eliminar todos los productos?");
+  if (confirmacion) {
+    localStorage.removeItem("carrito");
+    actualizarCarrito([]);
+  }
+};
