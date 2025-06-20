@@ -45,3 +45,21 @@
 .btn-carrito:hover {
     background-color: #C89A6B;
 }
+
+.btn-fav {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    color: #EAE4D5;
+    cursor: pointer;
+    font: inherit;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.btn-fav:hover {
+    color: #FFF2D7;
+    text-decoration: underline;
+}
