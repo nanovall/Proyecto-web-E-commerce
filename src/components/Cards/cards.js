@@ -38,12 +38,10 @@ export function renderCards(data) {
     `;
     containerCards.insertAdjacentHTML("beforeend", tpl);
 
-    // Listener para favoritos
     const favBtn = document.getElementById(`fav-${p.id}`);
     favBtn.addEventListener("click", () => toggleFavorito(p));
   });
 
-  // Inicializa estado de las estrellas y el botón global
   initFavoritos();
 }
 
