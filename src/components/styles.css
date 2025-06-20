@@ -32,3 +32,16 @@
 .dropdown-item {
     color: #EAE4D5;
 }
+
+.btn-carrito {
+    color: #EAE4D5!important;
+    background-color: #D8AE7E;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-carrito:hover {
+    background-color: #C89A6B;
+}

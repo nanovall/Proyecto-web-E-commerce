@@ -1,6 +1,6 @@
 import { createCards, renderCards } from './components/Cards/cards.js';
-import { crearSeccionCarrito } from "./cosas/carritocompra.js";
-import { filtrarProductos } from "./cosas/filtrado.js";
+import { crearSeccionCarrito } from "./features/carritocompra.js";
+import { filtrarProductos } from "./features/filtrado.js";
 
 // Inicializar carrito si no existe
 if (!localStorage.getItem("carrito")) {

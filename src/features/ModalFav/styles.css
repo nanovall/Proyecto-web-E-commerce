@@ -1,0 +1,20 @@
+#modal-favoritos .fav-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  #modal-favoritos .fav-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+  }
+  #modal-favoritos .btn-remove-fav {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: #c00;
+    cursor: pointer;
+  }
+  

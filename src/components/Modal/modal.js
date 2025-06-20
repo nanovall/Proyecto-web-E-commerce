@@ -1,4 +1,4 @@
-import { guardarEnCarrito } from "../../cosas/elcarrito.js";
+import { guardarEnCarrito } from "../../features/elcarrito.js";
 
 
 export function createModal(p) {

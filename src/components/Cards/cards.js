@@ -1,46 +1,65 @@
+// src/components/Cards/cards.js
+
 import { getProducts } from "../../api/api.js";
 import { createModal } from "../Modal/modal.js";
+import {
+  toggleFavorito,
+  renderBoton,
+  initFavoritos,
+} from "../../features/ModalFav/fav.js";
 
-
-let containerCards = document.querySelector("#list-products");
+const containerCards = document.querySelector("#list-products");
 
 export function renderCards(data) {
-  containerCards.innerHTML = ""; // Limpiar antes de pintar
+  containerCards.innerHTML = "";
 
-  data.forEach((p) => {
-    let template = `
+  data.forEach(p => {
+    const tpl = `
       <div class="col">
         <div class="card">
           <img src="${p.image}" class="card-img-top" alt="${p.title}">
           <div class="card-body">
-            <h5 class="card-title text-truncate">${p.title}</h5>
-            <p class="card-text">Acá van los detalles posho</p>
-            <button type="button" class="btn btn-primary" onclick='losdetalles(${p.id})' id="${p.id}">
+            <div class="card-body-header">
+              <h5 class="card-title text-truncate">${p.title}</h5>
+              <button id="fav-${p.id}" class="btn-fav-card">♡</button>
+            </div>
+            <p class="card-text">${p.description}</p>
+            <!-- Botón favorito -->
+            <!-- Botón detalles / modal -->
+            <button type="button"
+                    class="btn btn-primary"
+                    onclick="losdetalles(${p.id})"
+                    id="${p.id}">
               Más Detalles
             </button>
           </div>
         </div>
-      </div>`;
-    containerCards.innerHTML += template;
+      </div>
+    `;
+    containerCards.insertAdjacentHTML("beforeend", tpl);
+
+    // Listener para favoritos
+    const favBtn = document.getElementById(`fav-${p.id}`);
+    favBtn.addEventListener("click", () => toggleFavorito(p));
   });
+
+  // Inicializa estado de las estrellas y el botón global
+  initFavoritos();
 }
 
 export function createCards() {
-  getProducts().then((data) => {
+  getProducts().then(data => {
     localStorage.setItem("productos", JSON.stringify(data));
 
-    window.losdetalles = (id) => {
+    window.losdetalles = id => {
       const productos = JSON.parse(localStorage.getItem("productos")) || [];
-      const p = productos.find((prod) => prod.id === id);
-      if (p) {
-        createModal(p);
-        const modal = new bootstrap.Modal(
-          document.getElementById("exampleModal")
-        );
-        modal.show();
+      const prod = productos.find(item => item.id === id);
+      if (prod) {
+        createModal(prod);
+        new bootstrap.Modal(document.getElementById("exampleModal")).show();
       }
     };
 
-    renderCards(data); // Pintar todos al inicio
+    renderCards(data);
   });
 }
