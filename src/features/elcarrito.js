@@ -1,4 +1,5 @@
 import { crearSeccionCarrito } from "./carritocompra.js";
+import { mostrarCompraExitosa } from "./compraExitosa.js";
 
 export function guardarEnCarrito(p) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -17,7 +18,6 @@ export function validarpEnCarrito(carrito, p) {
   }
 }
 
-// Permitir que otras funciones del navegador lo usen
 window.cambiarCantidad = (id, cambio) => {
   let carrito = JSON.parse(localStorage.getItem("carrito"));
   const index = carrito.findIndex((p) => p.id === id);
@@ -42,20 +42,24 @@ function guardarEnLocalStorage(carrito) {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-// Para recargar desde otros archivos si se necesita
 export function actualizarCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   crearSeccionCarrito(carrito);
 }
 
 window.finalizarCompra = function () {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  if (carrito.length === 0) return;
+
+  mostrarCompraExitosa(carrito);
   localStorage.removeItem("carrito");
-  alert("¡Gracias por tu compra!");
   actualizarCarrito([]);
 };
 
 window.eliminarTodoElCarrito = function () {
-  const confirmacion = confirm("¿Estás seguro de que querés eliminar todos los productos?");
+  const confirmacion = confirm(
+    "¿Estás seguro de que querés eliminar todos los productos?"
+  );
   if (confirmacion) {
     localStorage.removeItem("carrito");
     actualizarCarrito([]);
