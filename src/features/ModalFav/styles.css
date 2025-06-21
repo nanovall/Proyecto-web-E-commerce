@@ -2,19 +2,34 @@
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
-  }
-  #modal-favoritos .fav-item img {
+}
+#modal-favoritos .fav-item img {
     width: 60px;
     height: 60px;
     object-fit: cover;
     border-radius: 0.25rem;
     margin-right: 0.5rem;
-  }
-  #modal-favoritos .btn-remove-fav {
+}
+#modal-favoritos .btn-remove-fav {
     background: transparent;
     border: none;
     font-size: 1.2rem;
     color: #c00;
     cursor: pointer;
-  }
-  
+}
+
+.title-product {
+    width: 40%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.title-product:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    transform : scale(1.01);
+    transition: transform 0.2s ease-in-out;
+
+}

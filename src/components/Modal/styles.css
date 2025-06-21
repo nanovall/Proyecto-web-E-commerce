@@ -1,0 +1,18 @@
+.btn-add{
+    background-color: #D8AE7E;
+    color: #000;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+.btn-cancel{
+    background-color: #d03544;
+    color: #000;
+    font-size: medium;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    cursor: pointer;
+}

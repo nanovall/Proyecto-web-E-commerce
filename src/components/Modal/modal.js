@@ -26,8 +26,8 @@ export function createModal(p) {
           <p><strong>Precio:</strong> $${p.price}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick='guardarEnCarrito(${p.id})'>
+          <button type="button" class="btn-cancel" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn-add" data-bs-dismiss="modal" onclick='guardarEnCarrito(${p.id})'>
             <span><i class="bi bi-basket3"></i></span> Agregar al carrito
           </button>
         </div>
