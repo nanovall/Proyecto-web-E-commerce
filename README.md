@@ -45,6 +45,7 @@ code .
 - @nanovall
 - @lucasrobertodev
 - @usuario2
+- @Joacobrito18
 
 ---
 
