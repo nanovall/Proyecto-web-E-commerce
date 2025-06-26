@@ -12,13 +12,29 @@ Este es un proyecto de una página web E-commerce desarrollada en Visual Studio 
 ## 📁 Estructura del proyecto
 
 ```
-/src
- ├── /api
- └── /components
-      ├── cards.js
-      ├── index.html
-      ├── index.js
-      └── modal.js
+├── api
+│   └── api.js
+├── components
+│   ├── Cards
+│   │   ├── cards.js
+│   │   └── styles.css
+│   ├── Modal
+│   │   ├── modal.js
+│   │   └── styles.css
+│   └── css
+│       └── style.css
+├── features
+│   ├── ModalFav
+│   │   ├── fav.js
+│   │   └── styles.css
+│   ├── carritoCompra.js
+│   ├── compraExitosa.js
+│   ├── elcarrito.js
+│   └── filtrado.js
+├── index.html
+├── index.js
+├── README.md
+└── styles.css
 ```
 
 ## 🛠 Instalación y ejecución
